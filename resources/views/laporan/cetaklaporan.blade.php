@@ -67,7 +67,7 @@
               </p>
             </div>
           </div>
-          <div id="pembuka" class="row">&emsp; &emsp; &emsp; Menindak lanjuti surat dari Sekretariat Daerah Kabupaten Semarang Nomor : 005/001819/2018 perihal Peraturan Baru mengenai Badan Permusyawaratan Desa (BPD) berdasarkan Perda Nomor 4 Tahun 2018 dan Perbup Nomor 21 Tahun 2018 serta Tahapan Pengisian Anggota BPD, bersama ini kami mengharap atas kehadiran saudara besok pada :</div>
+          <div id="pembuka" class="row">&emsp; Dengan ini bahwa saya :</div>
           <div id="tempat-tgl">
             <table>
               <tr>
@@ -85,20 +85,18 @@
                 <td>:</td>
                 <td>{{ $laporan->tanggal }}</td>
               </tr>
-              <tr>
-                <td>Catatan</td>
-                <td>:</td>
-                <td>-</td>
-              </tr>
             </table>
           </div>
-          <div id="penutup">Demikian untuk menjadikan perhatian dan atas kehadirannya diucapkan terimakasih.</div>
+          <div id="penutup">Izin menyampaikan laporan kerusakan yang diakibatkan oleh {{ $laporan->bencana }} dengan deskripsi sebagai berikut :
+            <br>
+            {{ $laporan->deskripsi }}
+          </div>
           <div id="ttd" class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4"></div>
             <div class="col-md-4">
-              <p id="camat"><strong>CAMAT BERGAS</strong></p>
-              <div id="nama-camat"><strong><u>TRI MARTONO, SH, MM</u></strong><br />
+              <p id="camat"><strong>PENANGGUNG JAWAB</strong></p>
+              <div id="nama-camat"><strong><u>{{ $laporan->penanggung }}</u></strong><br />
             Pembina Tk. I<br />
             NIP. 196703221995031001</div>
           </div>
