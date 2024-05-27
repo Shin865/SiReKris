@@ -37,7 +37,7 @@
           <div class="col-lg">
             <div class="container-tight">
               <div class="text-center mb-4">
-                <a href="." class="navbar-brand navbar-brand-autodark"><img src="{{ asset('tabler/static/logo.png') }}" height="36" alt="">PresenSync</a>
+                <a href="." class="navbar-brand navbar-brand-autodark"><img src="{{ asset('tabler/static/logo.png') }}" height="36" alt="">SiReKsis</a>
               </div>
               <div class="card card-md">
                 <div class="card-body">

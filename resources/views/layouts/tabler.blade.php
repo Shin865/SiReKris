@@ -9,10 +9,10 @@
 -->
 <html lang="en">
   <head>
-    <meta c`harset="utf-8"/>
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Dashboard Admin</title>
+    <title>Laporan</title>
     <!-- CSS files -->
     <link href="{{ asset('tabler/dist/css/tabler.min.css?1692870487') }}" rel="stylesheet"/>
     <link href="{{ asset('tabler/dist/css/tabler-flags.min.css?1692870487') }}" rel="stylesheet"/>
@@ -20,9 +20,6 @@
     <link href="{{ asset('tabler/dist/css/tabler-vendors.min.css?1692870487') }}" rel="stylesheet"/>
     <link href="{{ asset('tabler/dist/css/demo.min.css?1692870487') }}" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
     <style>
       @import url('https://rsms.me/inter/inter.css');
       :root {
@@ -33,14 +30,12 @@
       }
     </style>
   </head>
-  <body >
+  <body class=" layout-boxed">
     <script src="{{ asset('tabler/dist/js/demo-theme.min.js?1692870487') }}"></script>
     <div class="page">
-      <!-- Sidebar -->
-      @include('layouts.sidebar')
       <!-- Navbar -->
-      @include('layouts.header')
-      <div class="page-wrapper">
+        <div class="page-wrapper">
+          @include('layouts.header')
         
         @yield('content')
 

@@ -38,9 +38,6 @@ Route::middleware('auth:pelapor')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('/proseslogout', [AuthController::class, 'proseslogout']);
 
-    Route::get('/laporan', [LaporanController::class, 'laporan']);
-    Route::post('/laporan/cetaklaporan', [LaporanController::class, 'cetaklaporan']);
-
     Route::get('/pelaporan', [PelaporanController::class, 'index']);
     Route::post('/pelaporan/store', [PelaporanController::class, 'store']);
     Route::post('/pelaporan/edit', [PelaporanController::class, 'edit']);
@@ -68,3 +65,5 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/', [BoardingController::class, 'boarding']);
     Route::get('/akun', [BoardingController::class, 'akun']);
     Route::post('/akun/register', [BoardingController::class, 'register']);
+    Route::get('/laporan', [LaporanController::class, 'laporan']);
+    Route::post('/laporan/cetaklaporan', [LaporanController::class, 'cetaklaporan']);
