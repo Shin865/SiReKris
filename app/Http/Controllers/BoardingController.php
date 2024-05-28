@@ -11,7 +11,20 @@ class BoardingController extends Controller
 {
     public function boarding()
     {
-        return view('boarding.boarding');
+        $rekaplaporan = [
+            'jmllaporan' => 0,
+            'jmlacc' => 0,
+            'jmltolak' => 0,
+        ];
+        $laporan = DB ::table('laporans')
+            ->selectRaw('COUNT(kode_lapor) as jmllaporan, SUM(IF(status="1",1,0)) as jmlacc, SUM(IF(status="2",1,0)) as jmltolak')
+            ->first();
+
+            $rekaplaporan['jmllaporan'] += $laporan->jmllaporan;
+            $rekaplaporan['jmlacc'] += $laporan->jmlacc;
+            $rekaplaporan['jmltolak'] += $laporan->jmltolak;
+
+        return view('boarding.boarding', compact('rekaplaporan'));
     }
 
     public function akun()

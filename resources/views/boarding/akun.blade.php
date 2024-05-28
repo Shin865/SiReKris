@@ -12,7 +12,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Sign up - Tabler - Premium and Open Source dashboard template with responsive and high quality UI.</title>
+    <title>Register</title>
     <!-- CSS files -->
     <link href="{{ asset('tabler/dist/css/tabler.min.css?1692870487') }}" rel="stylesheet"/>
     <link href="{{ asset('tabler/dist/css/tabler-flags.min.css?1692870487') }}" rel="stylesheet"/>
@@ -42,7 +42,7 @@
       <div class="container container-tight py-4">
         <div class="text-center mb-4">
           <a href="." class="navbar-brand navbar-brand-autodark">
-            <img src="{{ asset('tabler/static/logo.svg') }}" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+            <img src="{{ asset('tabler/static/logo.png') }}" width="110" height="32" alt="Tabler" class="navbar-brand-image">
           </a>
         </div>
         <form class="card card-md" action="/akun/register" method="POST" id="formregis" autocomplete="off" novalidate>

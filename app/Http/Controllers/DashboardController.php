@@ -11,7 +11,20 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboard.dashboard');
+        $rekaplaporan = [
+            'jmllaporan' => 0,
+            'jmlacc' => 0,
+            'jmltolak' => 0,
+        ];
+        $laporan = DB ::table('laporans')
+            ->selectRaw('COUNT(kode_lapor) as jmllaporan, SUM(IF(status="1",1,0)) as jmlacc, SUM(IF(status="2",1,0)) as jmltolak')
+            ->first();
+
+            $rekaplaporan['jmllaporan'] += $laporan->jmllaporan;
+            $rekaplaporan['jmlacc'] += $laporan->jmlacc;
+            $rekaplaporan['jmltolak'] += $laporan->jmltolak;
+
+        return view('dashboard.dashboard', compact('rekaplaporan'));
     }
 
     public function dashboardadmin(){
@@ -20,16 +33,20 @@ class DashboardController extends Controller
                 $rekaplaporan = [
                     'jmllaporan' => 0,
                     'jmlacc' => 0,
+                    'jmltolak' => 0,
+                    'jmlpending' => 0,
                 ];
                 $rekapakun = [
                     'jmlakun' => 0,
                 ];
                 $laporan = DB ::table('laporans')
-                    ->selectRaw('COUNT(kode_lapor) as jmllaporan, SUM(IF(status="1",1,0)) as jmlacc')
+                    ->selectRaw('COUNT(kode_lapor) as jmllaporan, SUM(IF(status="1",1,0)) as jmlacc, SUM(IF(status="2",1,0)) as jmltolak, SUM(IF(status="0",1,0)) as jmlpending')
                     ->first();
     
                     $rekaplaporan['jmllaporan'] += $laporan->jmllaporan;
                     $rekaplaporan['jmlacc'] += $laporan->jmlacc;
+                    $rekaplaporan['jmltolak'] += $laporan->jmltolak;
+                    $rekaplaporan['jmlpending'] += $laporan->jmlpending;
             
                     $akun = DB::table('pelapor')
                         ->selectRaw('COUNT(id_pela) as jmlakun')

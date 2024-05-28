@@ -24,85 +24,117 @@
         font-size: 18px;
         font-weight: bold;
     }
+    .tabeldatakaryawan{
+        margin-top: 10px;
+    }
+    .tabeldatakaryawan td{
+        padding: 5px;
+    }
+    .tabelpresensi{
+        width: 100%;
+        margin-top: 10px;
+        border-collapse: collapse
+    }
+    .tabelpresensi> tr, th{
+        border: 2px solid black;
+        padding: 5px;
+        background-color: #c1c1c1;
+    }
+    .tabelpresensi td{
+        border: 2px solid black;
+        padding: 5px;
+    }
     .foto{
-        width: 40px;
-        height: 30px;
+        width: 200px;
+        height: 200px;
     }
 </style>
 </head>
 
+@php
+  $path = Storage::url('uploads/laporan/'.$laporan->foto);
+@endphp
+
 <!-- Set "A5", "A4" or "A3" for class name -->
 <!-- Set also "landscape" if you need -->
 <body class="A4">
-    <div>
-        <header>
-          <div class="row">
-            <div id="img" class="col-md-3">
-              <img id="logo" src="https://getasanbersinar.files.wordpress.com/2016/02/logo-kabupaten-semarang-jawa-tengah.png" width="140" height="160" />
-            </div>
-            <div id="text-header" class="col-md-9">
-              <h3 class="kablogo">PEMERINTAH KABUPATEN SEMARANG</h3>
-              <h1 class="keclogo"><strong>KECAMATAN BERGAS</strong></h1>
-              <h6 class="alamatlogo">Jl. Soekarno-Hatta, No. 68, Telepon/Faximile (0298) 523024</h6>
-              <h5 class="kodeposlogo"><strong>BERGAS 50552</strong></h5>
-            </div>
-          </div>
-        </header>
-      
-        <div class="container">
-          <hr class="garis1"/>
-          <div id="alamat" class="row">
-            <div id="lampiran" class="col-md-6">
-              Nomor	: 005 / <br />
-              Lampiran	: - <br />
-              Perihal	: Undangan
-            </div>
-            <div id="tgl-srt" class="col-md-6">
-              <p id="tls">Bergas, 30 April 2018</p>
-              
-              <p class="alamat-tujuan">Kepada Yth. :<br />
-              Kepala Desa</p>
-                
-                <p class="alamat-tujuan">se - Kecamatan Bergas
-              </p>
-            </div>
-          </div>
-          <div id="pembuka" class="row">&emsp; Dengan ini bahwa saya :</div>
-          <div id="tempat-tgl">
-            <table>
-              <tr>
-                <td>Penanggung Jawab</td>
-                <td>:</td>
-                <td>{{ $laporan->penanggung }}</td>
-              </tr>
-              <tr>
-                <td>Alamat</td>
-                <td>:</td>
-                <td>{{ $laporan->alamat }}</td>
-              </tr>
-              <tr>
-                <td>Tanggal</td>
-                <td>:</td>
-                <td>{{ $laporan->tanggal }}</td>
-              </tr>
-            </table>
-          </div>
-          <div id="penutup">Izin menyampaikan laporan kerusakan yang diakibatkan oleh {{ $laporan->bencana }} dengan deskripsi sebagai berikut :
-            <br>
-            {{ $laporan->deskripsi }}
-          </div>
-          <div id="ttd" class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
-              <p id="camat"><strong>PENANGGUNG JAWAB</strong></p>
-              <div id="nama-camat"><strong><u>{{ $laporan->penanggung }}</u></strong><br />
-            Pembina Tk. I<br />
-            NIP. 196703221995031001</div>
-          </div>
-            </div>
-      </div>
-      </div>
+  <!-- Each sheet element should have the class "sheet" -->
+  <!-- "padding-**mm" is optional: you can set 10, 15, 20 or 25 -->
+  <section class="sheet padding-10mm">
+
+   <table style="width: 100%">
+    <tr>
+        <td style="width: 10%">
+            <img src="{{ asset('/tabler/static/cepogo.png')}}" alt="" width="80" height="80">
+        </td>
+        <td style="width: 75%; text-align: center">
+            <p><strong>LAPORAN KERUSAKAN BENCANA</strong><br>
+            <strong>KECAMATAN CEPOGO</strong><br>
+            Tumang Krajan, RT.005/RW.014, Dusun III, Cepogo, Boyolali Regency, Central Java 57362</p>
+        </td>
+        <td style="width: 10%">
+          <img src="{{ asset('/tabler/static/jateng.png')}}" alt="" width="80" height="80">
+      </td>
+    </tr>
+   </table>
+    <hr>
+    <h4>Dengan adanya surat ini menyatakan  bahwa :</h4>
+   <table class="tabeldatakaryawan">
+    <tr>
+        <td>Penanggung Jawab</td>
+        <td>:</td>
+        <td>{{ $laporan->penanggung }}</td>
+    </tr>
+    <tr>
+        <td>Alamat</td>
+        <td>:</td>
+        <td>{{ $laporan->alamat }}</td>
+    </tr>
+    <tr>
+        <td>No. HP</td>
+        <td>:</td>
+        <td>{{ $laporan->no_hp }}</td>
+    </tr>
+    <tr>
+        <td>Tanggal</td>
+        <td>:</td>
+        <td>{{ $laporan->tanggal}}</td>
+    </tr>
+  </table>
+  <p>Izin menyampaikan laporan kerusakan yang diakibatkan oleh <b>{{ $laporan->bencana }}</b> dengan deskripsi sebagai berikut :</p>
+    <table class="tabelpresensi">
+          <tr>
+                <td>{{ $laporan->deskripsi }}</td>
+          </tr>
+    </table>
+    <p>Berikut foto/bukti terlampir : </p>
+    <table style="width: 100%">
+      <tr>
+        <td style="text-align: center">
+          @if ( empty($laporan->foto) )
+        <img src="{{ asset('assets/img/nophoto.png') }}" class="foto" alt="">
+        @else
+        <img src="{{ url($path) }}" class="foto" alt="">
+        @endif
+        </td>
+      </tr>
+</table>
+    <p>Demikian surat ini kami buat dengan sebenarnya, atas perhatian dan kerjasamanya kami ucapkan terima kasih.</p>
+    <table width="100%" style="margin-top:100px">
+        <tr>
+            <td colspan="2" style="text-align: center">Cepogo, {{ date('d-m-Y',strtotime(date('Y-m-d'))) }}<br>
+            <strong>{{ $laporan->penanggung }}</strong>
+            <br><br><br><br><br>
+            ............................................
+            </td>
+          <td colspan="2" style="text-align: center">Cepogo, {{ date('d-m-Y',strtotime(date('Y-m-d'))) }}<br>
+          <strong>CAMAT CEPOGO</strong>
+          <br><br><br><br><br>
+          ............................................
+          </td>
+        </tr>
+    </table>
+  </section>
 
 </body>
 

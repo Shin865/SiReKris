@@ -29,6 +29,7 @@ class LaporanController extends Controller
     public function cetaklaporan(Request $request){
         $kode_lapor = $request->kode_lapor;
         $laporan = DB::table('laporans')->where('kode_lapor',$kode_lapor)->first();
+
         if(isset($_POST['exportword'])){
             $time = date('H:i:s');
             header("Content-type: application/vnd.ms-word");

@@ -18,12 +18,12 @@
   <div class="page-body">
     <div class="container-xl">
         <div class="row">
-            <div class="col-md-6 col-xl-3">
+            <div class="col-md-6 col-xl-2">
                 <div class="card card-sm">
                   <div class="card-body">
                     <div class="row align-items-center">
                       <div class="col-auto">
-                        <a href="/presensi/monitoring">
+                        <a href="/akunlist">
                         <span class="bg-success text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/currency-dollar -->   
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-fingerprint" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -48,12 +48,12 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 col-xl-3">
+              <div class="col-md-6 col-xl-2">
                 <div class="card card-sm">
                   <div class="card-body">
                     <div class="row align-items-center">
                       <div class="col-auto">
-                        <a href="/presensi/izinsakit">
+                        <a href="/aksi">
                         <span class="bg-info text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/currency-dollar -->  
                           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-text" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -78,12 +78,12 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 col-xl-3">
+              <div class="col-md-6 col-xl-2">
                 <div class="card card-sm">
                   <div class="card-body">
                     <div class="row align-items-center">
                       <div class="col-auto">
-                        <a href="/presensi/izinsakit">
+                        <a href="/aksi">
                         <span class="bg-warning text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/currency-dollar -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-report-medical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -101,6 +101,64 @@
                         </div>
                         <div class="text-secondary">
                           Laporan Diterima
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-2">
+                <div class="card card-sm">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <a href="/aksi">
+                        <span class="bg-warning text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/currency-dollar -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-report-medical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"></path>
+                                <path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"></path>
+                                <path d="M10 14l4 0"></path>
+                                <path d="M12 12l0 4"></path>
+                             </svg>
+                        </span>
+                      </a>
+                      </div>
+                      <div class="col">
+                        <div class="font-weight-medium">
+                        {{ $rekaplaporan['jmlpending'] != null ? $rekaplaporan['jmlpending'] : 0 }}
+                        </div>
+                        <div class="text-secondary">
+                          Laporan Pending
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-2">
+                <div class="card card-sm">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <a href="/aksi">
+                        <span class="bg-warning text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/currency-dollar -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-report-medical" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"></path>
+                                <path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"></path>
+                                <path d="M10 14l4 0"></path>
+                                <path d="M12 12l0 4"></path>
+                             </svg>
+                        </span>
+                      </a>
+                      </div>
+                      <div class="col">
+                        <div class="font-weight-medium">
+                        {{ $rekaplaporan['jmltolak'] != null ? $rekaplaporan['jmltolak'] : 0 }}
+                        </div>
+                        <div class="text-secondary">
+                          Laporan Tertolak
                         </div>
                       </div>
                     </div>

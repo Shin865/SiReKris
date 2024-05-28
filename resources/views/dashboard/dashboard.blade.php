@@ -59,11 +59,11 @@
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="index.html#hero" class="">Beranda</a></li>
-            <li><a href="index.html#about">Tentang Kami</a></li>
-            <li><a href="index.html#fitur">Fitur</a></li>
-            <li><a href="index.html#carakerja">Cara Kerja</a></li>
-            <li><a href="index.html#qna">QnA</a></li>
+            <li><a href="#hero" class="">Beranda</a></li>
+            <li><a href="#about">Tentang Kami</a></li>
+            <li><a href="#fitur">Fitur</a></li>
+            <li><a href="#carakerja">Cara Kerja</a></li>
+            <li><a href="#qna">QnA</a></li>
             <li><a href="/laporan">Data Laporan</a></li>
             <li><a href="/pelaporan">Laporan Saya</a></li>
           </ul>
@@ -128,7 +128,7 @@
                     <a href="#" class="stretched-link">Total Laporan</a>
                   </h4>
                   <p class="description">
-                   332
+                    {{ $rekaplaporan['jmllaporan'] != null ? $rekaplaporan['jmllaporan'] : 0 }}
                   </p>
                 </div>
               </div>
@@ -149,7 +149,7 @@
                     <a href="#" class="stretched-link">Laporan Diterima</a>
                   </h4>
                   <p class="description">
-                    10
+                    {{ $rekaplaporan['jmlacc'] != null ? $rekaplaporan['jmlacc'] : 0 }}
                   </p>
                 </div>
               </div>
@@ -170,7 +170,7 @@
                     <a href="#" class="stretched-link">Laporan Ditolak</a>
                   </h4>
                   <p class="description">
-                   4
+                    {{ $rekaplaporan['jmltolak'] != null ? $rekaplaporan['jmltolak'] : 0 }}
                   </p>
                 </div>
               </div>
