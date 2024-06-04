@@ -17,10 +17,10 @@ class AuthController extends Controller
             $idPela = $pelapor->id_pela;
             $request->session()->put('id_pela', $idPela);
 
-           return redirect('/dashboard');
+            return redirect('/dashboard');
         } else {
             return redirect('/login')->with(['warning' => 'Email atau Password salah']);
-        }   
+        }
     }
 
     public function prosesloginadmin(Request $request)
@@ -29,7 +29,7 @@ class AuthController extends Controller
             return redirect('/dashboardadmin');
         } else {
             return redirect('/panel')->with(['warning' => 'Email atau Password salah']);
-        }   
+        }
     }
 
     public function proseslogout()
@@ -40,7 +40,8 @@ class AuthController extends Controller
         }
     }
 
-    public function proseslogoutadmin(){
+    public function proseslogoutadmin()
+    {
         if (Auth::guard('admin')->check()) {
             Auth::guard('admin')->logout();
             return redirect('/panel');

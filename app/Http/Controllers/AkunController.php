@@ -24,41 +24,39 @@ class AkunController extends Controller
         $email_pela = $request->email_pela;
         $no_hp = $request->no_hp;
         $password = Hash::make($request->password);
-        if(empty($request->password)){
+        if (empty($request->password)) {
             $data = array(
-                'nama_pela' =>$nama_pela,
-                'email_pela' =>$email_pela,
-                'no_hp' =>$no_hp,
+                'nama_pela' => $nama_pela,
+                'email_pela' => $email_pela,
+                'no_hp' => $no_hp,
             );
-        }else{
+        } else {
             $data = array(
-                'nama_pela' =>$nama_pela,
-                'email_pela' =>$email_pela,
-                'no_hp' =>$no_hp,
-                'password' =>$password,
+                'nama_pela' => $nama_pela,
+                'email_pela' => $email_pela,
+                'no_hp' => $no_hp,
+                'password' => $password,
             );
         }
         $update = DB::table('pelapor')->where('id_pela', $idPela)->update($data);
-        if($update){
+        if ($update) {
             return Redirect::back()->with(['success' => 'Data Berhasil di Update']);
-        }else{
+        } else {
             return Redirect::back()->with(['error' => 'Data Gagal di Update']);
         }
     }
-    
+
     public function akunlist(Request $request)
     {
         $query = Pelapor::query();
         $query->select('pelapor.*');
         $query->orderBy('tgl_daftar', 'desc');
-        if(!empty($request->nama_pela)){
-            $query->where('nama_pela','like','%'.$request->nama_pela.'%');
+        if (!empty($request->nama_pela)) {
+            $query->where('nama_pela', 'like', '%' . $request->nama_pela . '%');
         }
-        
+
         $akun = $query->paginate(10);
         $akun->appends($request->all());
-        return view('akun.akun',compact ('akun'));
+        return view('akun.akun', compact('akun'));
     }
-    
-    
 }
