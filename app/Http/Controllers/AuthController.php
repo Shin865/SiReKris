@@ -36,7 +36,7 @@ class AuthController extends Controller
                 return redirect()->intended('/dashboard');
             }
         } catch (\Throwable $th) {
-           dd('something wrong '. $th->getMessage());
+            dd('something wrong ' . $th->getMessage());
         }
     }
 
