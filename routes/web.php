@@ -18,12 +18,13 @@ use App\Http\Controllers\LaporanController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::middleware(['guest:pelapor'])->group(function () {
     Route::get('/login', function () {
         return view('auth.login');
     })->name('login');
     Route::post('/proseslogin', [AuthController::class, 'proseslogin']);
+    Route::get('/auth/google', [AuthController::class, 'redirect'])->name('google-auth');
+    Route::get('/auth/google/call-back', [AuthController::class, 'callbackGoogle']);
 });
 
 Route::middleware(['guest:admin'])->group(function () {

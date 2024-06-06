@@ -66,11 +66,6 @@
                             placeholder="Enter email">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Phone</label>
-                        <input type="number" name="no_hp" id="no_hp" class="form-control"
-                            placeholder="Enter phone number">
-                    </div>
-                    <div class="mb-3">
                         <label class="form-label">Password</label>
                         <div class="input-group input-group-flat">
                             <input type="password" name="password" id="password" class="form-control"
@@ -119,9 +114,8 @@
             $("#formregis").submit(function(e) {
                 var nama_admin = $("#nama_pela").val();
                 var email = $("#email_pela").val();
-                var no_hp = $("#no_hp").val();
                 var password = $("#password").val();
-                if (nama_pela == "" || email_pela == "" || password == "" || no_hp == "") {
+                if (nama_pela == "" || email_pela == "" || password == "") {
                     Swal.fire({
                         icon: 'error',
                         title: 'Gagal',

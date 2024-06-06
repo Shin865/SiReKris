@@ -36,15 +36,15 @@ class BoardingController extends Controller
     {
         $nama_pela = $request->nama_pela;
         $email_pela = $request->email_pela;
-        $no_hp = $request->no_hp;
         $password = Hash::make($request->password);
-        $tgl_daftar = date('Y-m-d');
+        $created_at = date('Y-m-d H:i:s');
+        $updated_at = date('Y-m-d H:i:s');
         $data = array(
             'nama_pela' => $nama_pela,
             'email_pela' => $email_pela,
-            'no_hp' => $no_hp,
             'password' => $password,
-            'tgl_daftar' => $tgl_daftar,
+            'created_at' => $created_at,
+            'updated_at' => $updated_at
         );
         $simpan = DB::table('pelapor')->insert($data);
         if ($simpan) {

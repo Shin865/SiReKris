@@ -71,7 +71,6 @@
                                             <th>No</th>
                                             <th>Nama Pangguna</th>
                                             <th>Email</th>
-                                            <th>No.HP</th>
                                             <th>Tanggal Daftar</th>
                                         </tr>
                                     </thead>
@@ -81,8 +80,7 @@
                                                 <td>{{ $loop->iteration + $akun->firstItem() - 1 }}</td>
                                                 <td>{{ $item->nama_pela }}</td>
                                                 <td>{{ $item->email_pela }}</td>
-                                                <td>{{ $item->no_hp }}</td>
-                                                <td>{{ $item->tgl_daftar }}</td>
+                                                <td>{{ $item->created_at }}</td>
                                             </tr>
                                         @endforeach
                                     </tbody>

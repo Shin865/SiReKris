@@ -17,7 +17,7 @@ class Pelapor extends Authenticatable
         'id_pela',
         'nama_pela',
         'email_pela',
-        'no_hp',
+        'google_id',
         'password',
     ];
 
