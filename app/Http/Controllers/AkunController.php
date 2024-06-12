@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class AkunController extends Controller
 {
     public function index(Request $request)
     {
-        $idPela = $request->session()->get('id_pela');
+        $idPela = Auth::guard('pelapor')->user()->id_pela;
         $pelapor = DB::table('pelapor')->where('id_pela', $idPela)->first();
         return view('akun.index', compact('pelapor'));
     }

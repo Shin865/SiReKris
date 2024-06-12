@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pelaporan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
@@ -12,7 +13,7 @@ class PelaporanController extends Controller
 {
     public function index(Request $request)
     {
-        $idPela = $request->session()->get('id_pela');
+        $idPela = Auth::guard('pelapor')->user()->id_pela;
         $query = Pelaporan::query();
         $query->select('laporans.*', 'nama_pela');
         $query->orderBy('tanggal', 'desc');
@@ -31,7 +32,7 @@ class PelaporanController extends Controller
 
     public function store(Request $request)
     {
-        $idPela = $request->session()->get('id_pela');
+        $idPela = Auth::guard('pelapor')->user()->id_pela;
         $penanggung = $request->penanggung;
         $alamat = $request->alamat;
         $bencana = $request->bencana;
@@ -86,7 +87,7 @@ class PelaporanController extends Controller
 
     public function edit(Request $request)
     {
-        $idPela = $request->session()->get('id_pela');
+        $idPela = Auth::guard('pelapor')->user()->id_pela;
         $kode_lapor = $request->kode_lapor;
         $pelaporan = DB::table('laporans')->where('kode_lapor', $kode_lapor)->first();
         return view('pelaporan.edit', compact('pelaporan'));
