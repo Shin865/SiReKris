@@ -95,13 +95,13 @@
                                 <path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5">
                                 </path>
                             </svg>
-                            Simpan
+                            Daftar
                         </button>
                     </div>
                 </div>
             </form>
             <div class="text-center text-secondary mt-3">
-                Sudah Punya Akun? <a href="/login" tabindex="-1">Sign in</a>
+                Sudah Punya Akun? <a href="/login" tabindex="-1">Login</a>
             </div>
         </div>
     </div>
