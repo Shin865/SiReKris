@@ -18,7 +18,7 @@
                     </svg>
                 </span>
                 <input type="text" readonly id="kode_lapor" value="{{ $pelaporan->kode_lapor }}" class="form-control"
-                    name="Kode_lapor" placeholder="Kode Laporan">
+                    name="kode_lapor" placeholder="Kode Laporan">
             </div>
         </div>
     </div>
@@ -72,7 +72,7 @@
                     </svg>
                 </span>
                 <input type="text" id="bencana" value="{{ $pelaporan->bencana }}" class="form-control"
-                    name="Bencana" placeholder="Bencana">
+                    name="bencana" placeholder="Bencana">
             </div>
         </div>
     </div>
