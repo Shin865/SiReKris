@@ -72,7 +72,7 @@
                     </svg>
                 </span>
                 <input type="text" id="bencana" value="{{ $pelaporan->bencana }}" class="form-control"
-                    name="Bencana" placeholder="Bencana">
+                    name="bencana" placeholder="Bencana">
             </div>
         </div>
     </div>
