@@ -33,7 +33,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <form action="/laporan" method="GET" autocomplete="off">
+                    <form action="/laporanadmin" method="GET" autocomplete="off">
                         <div class="row">
                             <div class="col-3">
                                 <div class="input-icon mb-3">
